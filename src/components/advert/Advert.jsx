@@ -6,11 +6,11 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { useState } from 'react';
 import Modal from '../modal/Modal';
 import AdvertModal from '../advert-modal/AdvertModal';
-import { GoStarFill } from 'react-icons/go';
-import { SlLocationPin } from 'react-icons/sl';
+import FeatureItems from '../feature-items/FeatureItems';
+import ReviewsAndLocation from '../reviews-and-location/ReviewsAndLocation';
 
 const Advert = ({ advert }) => {
-  const { _id, name, location, description, details, gallery, price, reviews, rating } = advert;
+  const { _id, name, description, gallery, price } = advert;
 
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,26 +49,9 @@ const Advert = ({ advert }) => {
               {isFavorite ? <FaHeart color="#e44848" size="1em" /> : <FaRegHeart size="1em" />}
             </div>
           </div>
-          <div className={css.reviewsBox}>
-            <div className={css.reviews}>
-              <GoStarFill color="#ffc531" size="1em" />
-              {`${rating}(${reviews.length} Reviews)`}
-            </div>
-            <div className={css.location}>
-              <SlLocationPin />
-              {location}
-            </div>
-          </div>
+          <ReviewsAndLocation advert={advert} />
           <p className={css.description}>{description}</p>
-          <ul className={css.featureList}>
-            {Object.entries(details).map(([key, value]) => {
-              return (
-                <li className={css.feature} key={key}>
-                  {key}
-                </li>
-              );
-            })}
-          </ul>
+          <FeatureItems advert={advert} />
           <button className={css.btn} onClick={() => onShowMore()}>
             Show more
           </button>
@@ -84,18 +67,3 @@ const Advert = ({ advert }) => {
 };
 
 export default Advert;
-
-// CD
-// TV
-// airConditioner
-// bathroom
-// beds
-// freezer
-// gas
-// hob
-// kitchen
-// microwave
-// radio
-// shower
-// toilet
-// water
