@@ -3,11 +3,17 @@ import { addToFavorites, removeFromFavorites } from '../../redux/favorites/slice
 import { selectFavorites } from '../../redux/favorites/selectors';
 import css from './Advert.module.css';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { useState } from 'react';
+import Modal from '../modal/Modal';
+import AdvertModal from '../advert-modal/AdvertModal';
+import { GoStarFill } from 'react-icons/go';
+import { SlLocationPin } from 'react-icons/sl';
 
 const Advert = ({ advert }) => {
   const { _id, name, location, description, details, gallery, price, reviews, rating } = advert;
 
   const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const favorites = useSelector(selectFavorites);
   const isFavorite = favorites.some(item => item._id === _id);
 
@@ -21,40 +27,59 @@ const Advert = ({ advert }) => {
 
   console.log(advert);
 
-  const onShowMore = () => {};
+  const onShowMore = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
-    <div className={css.container}>
-      <div className={css.imgBox}>
-        <img className={css.img} src={gallery[0]} alt={name} />
-      </div>
-      <div className={css.contentBox}>
-        <div className={css.titleBox}>
-          <h2 className={css.title}>{name}</h2>
-          <div className={css.price}>€{price}</div>
-          <div className={css.iconBox} onClick={onFavoriteClick}>
-            {isFavorite ? <FaHeart /> : <FaRegHeart />}
+    <>
+      <div className={css.container}>
+        <div className={css.imgBox}>
+          <img className={css.img} src={gallery[0]} alt={name} />
+        </div>
+        <div className={css.contentBox}>
+          <div className={css.titleBox}>
+            <h2 className={css.title}>{name}</h2>
+            <div className={css.price}>€{price}</div>
+            <div className={css.iconBox} onClick={onFavoriteClick}>
+              {isFavorite ? <FaHeart color="#e44848" size="1em" /> : <FaRegHeart size="1em" />}
+            </div>
           </div>
+          <div className={css.reviewsBox}>
+            <div className={css.reviews}>
+              <GoStarFill color="#ffc531" size="1em" />
+              {`${rating}(${reviews.length} Reviews)`}
+            </div>
+            <div className={css.location}>
+              <SlLocationPin />
+              {location}
+            </div>
+          </div>
+          <p className={css.description}>{description}</p>
+          <ul className={css.featureList}>
+            {Object.entries(details).map(([key, value]) => {
+              return (
+                <li className={css.feature} key={key}>
+                  {key}
+                </li>
+              );
+            })}
+          </ul>
+          <button className={css.btn} onClick={() => onShowMore()}>
+            Show more
+          </button>
         </div>
-        <div className={css.reviewsBox}>
-          <div className={css.reviews}>{`${rating}(${reviews.length} Reviews)`}</div>
-          <div className={css.location}>{location}</div>
-        </div>
-        <p className={css.description}>{description}</p>
-        <ul className={css.featureList}>
-          {Object.entries(details).map(([key, value]) => {
-            return (
-              <li className={css.feature} key={key}>
-                {key}
-              </li>
-            );
-          })}
-        </ul>
-        <button className={css.btn} onClick={() => onShowMore()}>
-          Show more
-        </button>
       </div>
-    </div>
+      {isModalOpen && (
+        <Modal handleCloseModal={handleCloseModal}>
+          <AdvertModal handleCloseModal={handleCloseModal} advert={advert} />
+        </Modal>
+      )}
+    </>
   );
 };
 
