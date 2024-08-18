@@ -1,3 +1,4 @@
+import StarRating from '../star-rating/StarRating';
 import css from './Reviews.module.css';
 
 const Reviews = ({ advert }) => {
@@ -12,7 +13,9 @@ const Reviews = ({ advert }) => {
               <div className={css.avatar}>{reviewer_name[0].toUpperCase()}</div>
               <div className={css.nameBox}>
                 <div className={css.name}>{reviewer_name}</div>
-                <div className={css.rating}>{reviewer_rating}</div>
+                <div className={css.rating}>
+                  <StarRating rating={reviewer_rating} />
+                </div>
               </div>
             </div>
             <p className={css.description}>{comment}</p>
