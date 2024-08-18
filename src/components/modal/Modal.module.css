@@ -22,17 +22,11 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  background-color: transparent;
+  border: none;
 }
 
 .closeIcon {
   width: 24px;
   height: 24px;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    border-radius: 15px;
-    padding: 40px;
-    min-width: 518px;
-  }
 }

@@ -1,0 +1,36 @@
+.container {}
+
+.title {
+    margin: 44px 0 24px 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.detailsItemBox {
+    display: flex;
+}
+
+.itemName {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.33333;
+    text-align: left;
+    flex-grow: 0;
+}
+
+.itemValue {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.33333;
+    text-align: right;
+    flex-grow: 1;
+}
+
+.itemName,
+.itemValue:not(:last-child) {
+    margin-bottom: 14px;
+}

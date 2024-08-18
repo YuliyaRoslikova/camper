@@ -16,7 +16,7 @@ const AdvertModal = ({ handleCloseModal, advert }) => {
   return (
     <>
       <div className={css.container}>
-        <h2 className={css.title}>{name}</h2>
+        <h1 className={css.title}>{name}</h1>
         <ReviewsAndLocation advert={advert} />
         <div className={css.price}>€{price}</div>
         <div className={css.imgBox}>
