@@ -4,9 +4,8 @@ import DocumentTitle from '../../components/document-title/DocumentTitle';
 import AdvertList from '../../components/advert-list/AdvertList';
 import { fetchAdverts } from '../../redux/adverts/operations';
 import { selectAdvertsLoading } from '../../redux/adverts/selectors';
-// import ContactForm from '../../components/contact-form/ContactForm';
-// import ContactList from '../../components/contact-list/ContactList';
-// import SearchBox from '../../components/search-box/SearchBox';
+import Filter from '../../components/filter/Filter';
+import css from './AdvertsPage.module.css';
 
 const AdvertsPage = () => {
   const dispatch = useDispatch();
@@ -20,10 +19,10 @@ const AdvertsPage = () => {
     <>
       <DocumentTitle>Adverts</DocumentTitle>
       <div>{isLoading && 'Request in progress...'}</div>
-      {/* <ContactForm />
-      <SearchBox />
-      <ContactList /> */}
-      <AdvertList />
+      <div className={css.container}>
+        <Filter />
+        <AdvertList />
+      </div>
     </>
   );
 };
