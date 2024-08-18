@@ -1,25 +1,71 @@
 .container {
-    width: 360px;
+    width: 100%;
 }
 
 .title {}
 
-.input {}
+.locationBox {
+    position: relative;
+}
+
+.locationIconBox {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input {
+    width: 100%;
+    padding: 18px 18px 18px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #f7f7f7;
+    border: none;
+}
 
 .subtitle {}
 
 .sectionTitle {}
 
-.equipmentList {}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
 
-.equipmentItem {}
+.item {
+    /* border: 1px solid #e44848;
+     */
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    padding: 17px 0;
+    min-width: 115px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
 
 .icon {}
 
-.sectionTitle {}
+.btn {
+    padding: 16px 60px;
+    border: 1px solid #E44848;
+    border-radius: 200px;
+    background-color: #E44848;
+    align-self: start;
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #fff;
+}
 
-.vehicleTypeList {}
-
-.vehicleTypeItem {}
-
-.btn {}
+.btn:hover,
+.btn:focus {
+    background-color: #d84343;
+    cursor: pointer;
+}

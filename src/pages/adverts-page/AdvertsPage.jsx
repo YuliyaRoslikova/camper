@@ -20,8 +20,12 @@ const AdvertsPage = () => {
       <DocumentTitle>Adverts</DocumentTitle>
       <div>{isLoading && 'Request in progress...'}</div>
       <div className={css.container}>
-        <Filter />
-        <AdvertList />
+        <div className={css.filterBox}>
+          <Filter />
+        </div>
+        <div className={css.advertListBox}>
+          <AdvertList />
+        </div>
       </div>
     </>
   );
