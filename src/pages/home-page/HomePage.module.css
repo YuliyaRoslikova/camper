@@ -1,12 +1,17 @@
 .container {
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - 80px);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: flex-start;
+    background-image: url('../../../public/img/camper-van.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
 }
 
 .title {
     font-weight: 500;
     font-size: 48;
-    text-align: center;
+    color: #fff;
 }

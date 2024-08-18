@@ -17,7 +17,11 @@ export const advertsSlice = createSlice({
         state.error = false;
       })
       .addCase(fetchAdverts.fulfilled, (state, action) => {
-        state.items.push(...action.payload);
+        action.payload.forEach(item => {
+          if (!state.items.find(({ _id }) => _id === item._id)) {
+            state.items.push(item);
+          }
+        });
         state.loading = false;
         state.error = false;
       })

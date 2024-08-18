@@ -2,8 +2,6 @@
     width: 100%;
 }
 
-.title {}
-
 .locationBox {
     position: relative;
 }
@@ -24,10 +22,6 @@
     border: none;
 }
 
-.subtitle {}
-
-.sectionTitle {}
-
 .list {
     display: flex;
     flex-wrap: wrap;
@@ -35,8 +29,6 @@
 }
 
 .item {
-    /* border: 1px solid #e44848;
-     */
     border: 1px solid rgba(16, 24, 40, 0.2);
     border-radius: 10px;
     padding: 17px 0;
@@ -47,8 +39,6 @@
     justify-content: space-between;
     flex-direction: column;
 }
-
-.icon {}
 
 .btn {
     padding: 16px 60px;
