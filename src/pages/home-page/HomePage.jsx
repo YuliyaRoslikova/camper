@@ -7,7 +7,7 @@ const HomePage = () => {
       <DocumentTitle>Home</DocumentTitle>
 
       <div className={css.container}>
-        <h1 className={css.title}>Camper welcome page</h1>
+        <h1 className={css.title}>Best camper for your luxury travel!</h1>
       </div>
     </>
   );

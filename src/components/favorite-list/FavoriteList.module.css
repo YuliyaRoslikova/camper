@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 888px;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.noItem {
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+}
