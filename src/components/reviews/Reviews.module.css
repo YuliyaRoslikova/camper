@@ -1,0 +1,41 @@
+.container {}
+
+.item {}
+
+.nameContainer {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #e44848;
+    border-radius: 50%;
+    background: #f2f4f7;
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+}
+
+.nameBox {}
+
+.name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.33333;
+}
+
+.rating {}
+
+.description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #475467;
+    margin: 16px 0 24px 0;
+}

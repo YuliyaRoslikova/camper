@@ -26,10 +26,16 @@ const AdvertModal = ({ handleCloseModal, advert }) => {
         </div>
         <p className={css.description}>{description}</p>
         <div className={css.tabBtnBox}>
-          <button className={css.featuresBtn} onClick={() => setIsFeature(true)}>
+          <button
+            className={`${css.featuresBtn} ${isFeature ? css.activeTab : ''}`}
+            onClick={() => setIsFeature(true)}
+          >
             Features
           </button>
-          <button className={css.reviewsBtn} onClick={() => setIsFeature(false)}>
+          <button
+            className={`${css.reviewsBtn} ${!isFeature ? css.activeTab : ''}`}
+            onClick={() => setIsFeature(false)}
+          >
             Reviews
           </button>
         </div>

@@ -34,17 +34,8 @@
 
 .tabBtnBox {
   border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.featuresBtn {
-  margin-right: 30px;
-  background-color: transparent;
-  border: none;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1.2;
+  margin-bottom: 44px;
+  position: relative;
 }
 
 .reviewsBtn {
@@ -53,7 +44,32 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
+}
 
+.featuresBtn,
+.reviewsBtn {
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.featuresBtn {
+  margin-right: 30px;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 5px;
+  background-color: #e44848;
 }
 
 .tabBox {
@@ -71,9 +87,3 @@
 .rightBox {
   width: 448px;
 }
-
-/* .btn:hover,
-.btn:focus {
-    background-color: #d84343;
-    cursor: pointer;
-} */
