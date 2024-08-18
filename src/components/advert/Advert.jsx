@@ -35,6 +35,8 @@ const Advert = ({ advert }) => {
     setIsModalOpen(false);
   };
 
+  const formattedPrice = price.toFixed(2);
+
   return (
     <>
       <div className={css.container}>
@@ -44,7 +46,7 @@ const Advert = ({ advert }) => {
         <div className={css.contentBox}>
           <div className={css.titleBox}>
             <h2 className={css.title}>{name}</h2>
-            <div className={css.price}>€{price}</div>
+            <div className={css.price}>€{formattedPrice}</div>
             <div className={css.iconBox} onClick={onFavoriteClick}>
               {isFavorite ? <FaHeart color="#e44848" size="1em" /> : <FaRegHeart size="1em" />}
             </div>

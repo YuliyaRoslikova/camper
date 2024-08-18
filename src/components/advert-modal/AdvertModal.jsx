@@ -13,12 +13,14 @@ const AdvertModal = ({ handleCloseModal, advert }) => {
 
   const dispatch = useDispatch();
 
+  const formattedPrice = price.toFixed(2);
+
   return (
     <>
       <div className={css.container}>
         <h1 className={css.title}>{name}</h1>
         <ReviewsAndLocation advert={advert} />
-        <div className={css.price}>€{price}</div>
+        <div className={css.price}>€{formattedPrice}</div>
         <div className={css.imgBox}>
           {gallery.map(image => (
             <img className={css.img} src={image} alt={name} key={image} />

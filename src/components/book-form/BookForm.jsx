@@ -1,7 +1,7 @@
 import css from './BookForm.module.css';
 
 const BookForm = ({ advert }) => {
-  const { bookForm } = advert;
+  const { _id } = advert;
 
   return (
     <div className={css.container}>
