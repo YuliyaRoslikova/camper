@@ -17,7 +17,7 @@ const Filter = () => {
           id="location"
           name="location"
           placeholder="Enter location"
-          value={location}
+          // value={location}
         />
       </div>
 

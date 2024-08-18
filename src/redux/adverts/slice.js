@@ -17,7 +17,7 @@ export const advertsSlice = createSlice({
         state.error = false;
       })
       .addCase(fetchAdverts.fulfilled, (state, action) => {
-        state.items = action.payload;
+        state.items.push(...action.payload);
         state.loading = false;
         state.error = false;
       })
