@@ -6,7 +6,7 @@ const Features = ({ advert }) => {
 
   return (
     <div className={css.container}>
-      <FeatureItems advert={advert} />
+      <FeatureItems advert={advert} full={true} />
       <h3 className={css.title}>Vehicle details</h3>
       <div className={css.detailsItemBox}>
         <div className={css.itemName}>Form</div>

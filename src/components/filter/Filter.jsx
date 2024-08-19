@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import css from './Filter.module.css';
 import { SlLocationPin } from 'react-icons/sl';
+import { MdAir } from 'react-icons/md';
+import { TbAutomaticGearbox, TbCamper, TbToolsKitchen2 } from 'react-icons/tb';
+import { LuShowerHead, LuTv } from 'react-icons/lu';
 
 const Filter = () => {
   const [location, setLocation] = useState('Kyiv, Ukraine');
@@ -25,40 +28,56 @@ const Filter = () => {
       <h4 className={css.sectionTitle}>Vehicle equipment</h4>
       <ul className={css.list}>
         <li className={css.item}>
-          <span className={css.icon}>Icon</span>
-          <span>AC</span>
+          <span className={css.icon}>
+            <MdAir size={30} />
+          </span>
+          <span className={css.itemDescription}>AC</span>
         </li>
         <li className={css.item}>
-          <span className={css.icon}>Icon</span>
-          <span>Automatic</span>
+          <span className={css.icon}>
+            <TbAutomaticGearbox size={30} />
+          </span>
+          <span className={css.itemDescription}>Automatic</span>
         </li>
         <li className={css.item}>
-          <span className={css.icon}>Icon</span>
-          <span>Kitchen</span>
+          <span className={css.icon}>
+            <TbToolsKitchen2 size={30} />
+          </span>
+          <span className={css.itemDescription}>Kitchen</span>
         </li>
         <li className={css.item}>
-          <span className={css.icon}>Icon</span>
-          <span>TV</span>
+          <span className={css.icon}>
+            <LuTv size={30} />
+          </span>
+          <span className={css.itemDescription}>TV</span>
         </li>
         <li className={css.item}>
-          <span className={css.icon}>Icon</span>
-          <span>Shower/WC</span>
+          <span className={css.icon}>
+            <LuShowerHead size={30} />
+          </span>
+          <span className={css.itemDescription}>Shower/WC</span>
         </li>
       </ul>
 
       <h4 className={css.sectionTitle}>Vehicle type</h4>
       <ul className={css.list}>
         <li className={css.item}>
-          <span className={css.icon}>Icon</span>
-          <span>Van</span>
+          <span className={css.icon}>
+            <TbCamper size={30} />
+          </span>
+          <span className={css.itemDescription}>Van</span>
         </li>
         <li className={css.item}>
-          <span className={css.icon}>Icon</span>
-          <span>Integrated</span>
+          <span className={css.icon}>
+            <TbCamper size={30} />
+          </span>
+          <span className={css.itemDescription}>Fully Integrated</span>
         </li>
         <li className={css.item}>
-          <span className={css.icon}>Icon</span>
-          <span>Alcove</span>
+          <span className={css.icon}>
+            <TbCamper size={30} />
+          </span>
+          <span className={css.itemDescription}>Alcove</span>
         </li>
       </ul>
 

@@ -54,14 +54,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    margin-bottom: 32px;
+    margin-bottom: 64px;
 }
 
 .item {
     border: 1px solid rgba(16, 24, 40, 0.2);
     border-radius: 10px;
-    padding: 17px 0;
-    min-width: 115px;
+    padding: 17px;
+    width: 115px;
     height: 95px;
     display: flex;
     align-items: center;
@@ -75,13 +75,16 @@
     cursor: pointer;
 }
 
+.itemDescription {
+    text-align: center;
+}
+
 .btn {
     padding: 16px 60px;
     border: 1px solid #E44848;
     border-radius: 200px;
     background-color: #E44848;
     align-self: start;
-    margin-top: 64px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
