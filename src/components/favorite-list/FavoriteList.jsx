@@ -1,18 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAdvertsError, selectAdverts } from '../../redux/adverts/selectors';
 import Advert from '../advert/Advert';
 import css from './FavoriteList.module.css';
-import { fetchAdverts } from '../../redux/adverts/operations';
-import { useEffect } from 'react';
 import { selectFavorites } from '../../redux/favorites/selectors';
 
 const FavoriteList = () => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
-
-  // useEffect(() => {
-  //   dispatch(fetchAdverts({ page }));
-  // }, [page, dispatch]);
 
   return (
     <div className={css.container}>

@@ -17,18 +17,3 @@ const FeatureItems = ({ advert }) => {
 };
 
 export default FeatureItems;
-
-// CD
-// TV
-// airConditioner
-// bathroom
-// beds
-// freezer
-// gas
-// hob
-// kitchen
-// microwave
-// radio
-// shower
-// toilet
-// water

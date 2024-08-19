@@ -9,7 +9,6 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addToFavorites: (state, action) => {
-      console.log('Current items:', state.items);
       const itemExists = state.items.some(item => item._id === action.payload._id);
 
       if (!itemExists) {

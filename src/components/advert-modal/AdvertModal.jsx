@@ -5,7 +5,6 @@ import Reviews from '../reviews/Reviews';
 import { useState } from 'react';
 import ReviewsAndLocation from '../reviews-and-location/ReviewsAndLocation';
 import BookForm from '../book-form/BookForm';
-// import toast from 'react-hot-toast';
 
 const AdvertModal = ({ handleCloseModal, advert }) => {
   const { name, description, gallery, price } = advert;

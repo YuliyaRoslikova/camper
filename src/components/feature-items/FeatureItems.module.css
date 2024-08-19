@@ -2,7 +2,6 @@
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
-    margin-top: 24px;
 }
 
 .feature {

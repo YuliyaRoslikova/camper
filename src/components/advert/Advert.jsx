@@ -25,8 +25,6 @@ const Advert = ({ advert }) => {
     }
   };
 
-  console.log(advert);
-
   const onShowMore = () => {
     setIsModalOpen(true);
   };

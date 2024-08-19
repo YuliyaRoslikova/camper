@@ -54,7 +54,7 @@ const Filter = () => {
         </li>
         <li className={css.item}>
           <span className={css.icon}>Icon</span>
-          <span>Fully Integrated</span>
+          <span>Integrated</span>
         </li>
         <li className={css.item}>
           <span className={css.icon}>Icon</span>
