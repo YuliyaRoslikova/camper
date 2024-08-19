@@ -21,13 +21,17 @@ const AdvertList = () => {
 
   return (
     <div className={css.container}>
-      <div className={css.list}>
-        {error && <p>ERROR!</p>}
+      {error && <p>ERROR!</p>}
+      <ul className={css.list}>
         {!error &&
           adverts.map(advert => {
-            return <Advert key={advert._id} advert={advert} />;
+            return (
+              <li key={advert._id}>
+                <Advert advert={advert} />
+              </li>
+            );
           })}
-      </div>
+      </ul>
       <button className={css.btn} onClick={onLoadMore}>
         Load more
       </button>

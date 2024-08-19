@@ -33,7 +33,7 @@ const Advert = ({ advert }) => {
     setIsModalOpen(false);
   };
 
-  const formattedPrice = price.toFixed(2);
+  const formattedPrice = price.toFixed(2).replace('.', ',');
 
   return (
     <>

@@ -12,7 +12,7 @@ const AdvertModal = ({ handleCloseModal, advert }) => {
 
   const dispatch = useDispatch();
 
-  const formattedPrice = price.toFixed(2);
+  const formattedPrice = price.toFixed(2).replace('.', ',');
 
   return (
     <>
