@@ -5,6 +5,7 @@ const initialState = {
   items: [],
   loading: false,
   error: null,
+  isLastItemLoaded: false,
 };
 
 export const advertsSlice = createSlice({
@@ -21,6 +22,7 @@ export const advertsSlice = createSlice({
           if (!state.items.find(({ _id }) => _id === item._id)) {
             state.items.push(item);
           }
+          state.isLastItemLoaded = action.payload.length < 4;
         });
         state.loading = false;
         state.error = false;
@@ -28,6 +30,7 @@ export const advertsSlice = createSlice({
       .addCase(fetchAdverts.rejected, state => {
         state.loading = false;
         state.error = true;
+        state.isLastItemLoaded = false;
       }),
 });
 

@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAdvertsError, selectAdverts } from '../../redux/adverts/selectors';
+import {
+  selectAdvertsError,
+  selectAdverts,
+  selectIsLastItemLoaded,
+} from '../../redux/adverts/selectors';
 import Advert from '../advert/Advert';
 import css from './AdvertList.module.css';
 import { fetchAdverts } from '../../redux/adverts/operations';
@@ -10,6 +14,7 @@ const AdvertList = () => {
   const [page, setPage] = useState(1);
   const error = useSelector(selectAdvertsError);
   const adverts = useSelector(selectAdverts);
+  const isLastItemLoaded = useSelector(selectIsLastItemLoaded);
 
   useEffect(() => {
     dispatch(fetchAdverts({ page }));
@@ -32,9 +37,11 @@ const AdvertList = () => {
             );
           })}
       </ul>
-      <button className={css.btn} onClick={onLoadMore}>
-        Load more
-      </button>
+      {!isLastItemLoaded && (
+        <button className={css.btn} onClick={onLoadMore}>
+          Load more
+        </button>
+      )}
     </div>
   );
 };
