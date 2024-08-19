@@ -68,3 +68,17 @@
     background-color: #d84343;
     cursor: pointer;
 }
+
+.btn:disabled {
+    background-color: #cccccc;
+    border-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
