@@ -1,1 +1,1 @@
-export const selectNameFilter = state => state.filters.name;
+export const selectFilterLocation = state => state.filters.location;

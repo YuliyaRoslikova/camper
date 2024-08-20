@@ -4,9 +4,18 @@ import { SlLocationPin } from 'react-icons/sl';
 import { MdAir } from 'react-icons/md';
 import { TbAutomaticGearbox, TbCamper, TbToolsKitchen2 } from 'react-icons/tb';
 import { LuShowerHead, LuTv } from 'react-icons/lu';
+import { changeFilterLocation } from '../../redux/filters/slice';
+import { useDispatch } from 'react-redux';
 
 const Filter = () => {
-  const [location, setLocation] = useState('Kyiv, Ukraine');
+  const dispatch = useDispatch();
+  const [location, setLocation] = useState('');
+
+  const onLocationChange = e => {
+    setLocation(e.target.value);
+    dispatch(changeFilterLocation(e.target.value));
+  };
+
   return (
     <div className={css.container}>
       <h3 className={css.title}>Location</h3>
@@ -20,6 +29,8 @@ const Filter = () => {
           id="location"
           name="location"
           placeholder="Enter location"
+          value={location}
+          onChange={onLocationChange}
         />
       </div>
 
