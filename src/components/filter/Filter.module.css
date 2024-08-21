@@ -60,13 +60,6 @@
 .item {
     border: 1px solid rgba(16, 24, 40, 0.2);
     border-radius: 10px;
-    padding: 17px;
-    width: 115px;
-    height: 95px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
 }
 
 .item:hover,
@@ -77,6 +70,20 @@
 
 .itemDescription {
     text-align: center;
+}
+
+.itemLabel {
+    padding: 17px;
+    width: 114px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.checkBox {
+    display: none;
 }
 
 .btn {

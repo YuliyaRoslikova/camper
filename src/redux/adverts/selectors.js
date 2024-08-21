@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { selectFilterLocation } from '../filters/selectors';
+import { selectFilter } from '../filters/selectors';
 
 export const selectAdverts = state => state.adverts.items;
 
@@ -10,7 +10,16 @@ export const selectAdvertsLoading = state => state.adverts.loading;
 export const selectIsLastItemLoaded = state => state.adverts.isLastItemLoaded;
 
 export const selectFilteredAverts = createSelector(
-  [selectAdverts, selectFilterLocation],
-  (adverts, filterLocation) =>
-    adverts.filter(advert => advert.location.toLowerCase().includes(filterLocation.toLowerCase()))
+  [selectAdverts, selectFilter],
+  (adverts, filter) => {
+    console.log(adverts);
+    return adverts.filter(advert => {
+      return (
+        (advert.location.toLowerCase().includes(filter.location.toLowerCase()) &&
+          filter.airConditioner &&
+          advert.details.airConditioner) ||
+        (!filter.airConditioner && !advert.details.airConditioner)
+      );
+    });
+  }
 );
