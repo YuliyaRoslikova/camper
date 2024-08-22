@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   selectAdvertsError,
   selectIsLastItemLoaded,
-  selectFilteredAverts,
+  selectFilteredAdverts,
 } from '../../redux/adverts/selectors';
 import Advert from '../advert/Advert';
 import css from './AdvertList.module.css';
@@ -13,7 +13,7 @@ const AdvertList = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const error = useSelector(selectAdvertsError);
-  const filteredAdverts = useSelector(selectFilteredAverts);
+  const filteredAdverts = useSelector(selectFilteredAdverts);
   const isLastItemLoaded = useSelector(selectIsLastItemLoaded);
 
   useEffect(() => {

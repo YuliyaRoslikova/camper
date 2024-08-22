@@ -6,7 +6,7 @@ const initialState = {
     airConditioner: false,
     gearboxAutomatic: false,
     kitchen: false,
-    tV: false,
+    tv: false,
     shower: false,
   },
 };

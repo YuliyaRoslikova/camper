@@ -63,7 +63,8 @@
 }
 
 .item:hover,
-.item:focus {
+.item:focus,
+.item.selected {
     border: 1px solid #e44848;
     cursor: pointer;
 }

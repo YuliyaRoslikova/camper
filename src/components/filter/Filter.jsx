@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import css from './Filter.module.css';
+import { useDispatch } from 'react-redux';
+import clsx from 'clsx';
 import { SlLocationPin } from 'react-icons/sl';
 import { MdAir } from 'react-icons/md';
 import { TbAutomaticGearbox, TbCamper, TbToolsKitchen2 } from 'react-icons/tb';
 import { LuShowerHead, LuTv } from 'react-icons/lu';
 import { changeFilter } from '../../redux/filters/slice';
-import { useDispatch } from 'react-redux';
+import css from './Filter.module.css';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Filter = () => {
         airConditioner: airConditionCheckBox,
         gearboxAutomatic: gearboxAutomaticCheckBox,
         kitchen: kitchenCheckBox,
-        tV: tVCheckBox,
+        tv: tVCheckBox,
         shower: showerCheckBox,
       })
     );
@@ -59,7 +60,7 @@ const Filter = () => {
 
       <h4 className={css.sectionTitle}>Vehicle equipment</h4>
       <ul className={css.list}>
-        <li className={css.item}>
+        <li className={clsx(css.item, { [css.selected]: airConditionCheckBox })}>
           <label className={css.itemLabel}>
             <input
               className={css.checkBox}
@@ -73,7 +74,7 @@ const Filter = () => {
             <span className={css.itemDescription}>AC</span>
           </label>
         </li>
-        <li className={css.item}>
+        <li className={clsx(css.item, { [css.selected]: gearboxAutomaticCheckBox })}>
           <label className={css.itemLabel}>
             <input
               className={css.checkBox}
@@ -87,7 +88,7 @@ const Filter = () => {
             <span className={css.itemDescription}>Automatic</span>
           </label>
         </li>
-        <li className={css.item}>
+        <li className={clsx(css.item, { [css.selected]: kitchenCheckBox })}>
           <label className={css.itemLabel}>
             <input
               className={css.checkBox}
@@ -101,7 +102,7 @@ const Filter = () => {
             <span className={css.itemDescription}>Kitchen</span>
           </label>
         </li>
-        <li className={css.item}>
+        <li className={clsx(css.item, { [css.selected]: tVCheckBox })}>
           <label className={css.itemLabel}>
             <input
               className={css.checkBox}
@@ -115,7 +116,7 @@ const Filter = () => {
             <span className={css.itemDescription}>TV</span>
           </label>
         </li>
-        <li className={css.item}>
+        <li className={clsx(css.item, { [css.selected]: showerCheckBox })}>
           <label className={css.itemLabel}>
             <input
               className={css.checkBox}
