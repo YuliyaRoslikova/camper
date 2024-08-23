@@ -16,6 +16,7 @@ const Filter = () => {
   const [kitchenCheckBox, setKitchenCheckBox] = useState(false);
   const [tVCheckBox, setTVCheckBox] = useState(false);
   const [showerCheckBox, setShowerCheckBox] = useState(false);
+  const [vehicleType, setVehicleType] = useState(null);
 
   useEffect(() => {
     dispatch(
@@ -26,6 +27,7 @@ const Filter = () => {
         kitchen: kitchenCheckBox,
         tv: tVCheckBox,
         shower: showerCheckBox,
+        vehicleType,
       })
     );
   }, [
@@ -36,7 +38,16 @@ const Filter = () => {
     kitchenCheckBox,
     tVCheckBox,
     showerCheckBox,
+    vehicleType,
   ]);
+
+  const onChangeVehicleType = type => {
+    if (type === vehicleType) {
+      setVehicleType(null);
+    } else {
+      setVehicleType(type);
+    }
+  };
 
   return (
     <div className={css.container}>
@@ -134,23 +145,55 @@ const Filter = () => {
 
       <h4 className={css.sectionTitle}>Vehicle type</h4>
       <ul className={css.list}>
-        <li className={css.item}>
-          <span className={css.icon}>
-            <TbCamper size={30} />
-          </span>
-          <span className={css.itemDescription}>Van</span>
+        <li className={clsx(css.item, { [css.selected]: vehicleType === 'panelTruck' })}>
+          <label className={css.itemLabel}>
+            <input
+              className={css.checkBox}
+              type="radio"
+              value={'panelTruck'}
+              checked={vehicleType === 'panelTruck'}
+              onClick={() => onChangeVehicleType('panelTruck')}
+              onChange={() => {}}
+            />
+            <span className={css.icon}>
+              <TbCamper size={30} />
+            </span>
+            <span className={css.itemDescription}>Van</span>
+          </label>
         </li>
-        <li className={css.item}>
-          <span className={css.icon}>
-            <TbCamper size={30} />
-          </span>
-          <span className={css.itemDescription}>Fully Integrated</span>
+
+        <li className={clsx(css.item, { [css.selected]: vehicleType === 'fullyIntegrated' })}>
+          <label className={css.itemLabel}>
+            <input
+              className={css.checkBox}
+              type="radio"
+              value={'fullyIntegrated'}
+              checked={vehicleType === 'fullyIntegrated'}
+              onClick={() => onChangeVehicleType('fullyIntegrated')}
+              onChange={() => {}}
+            />
+            <span className={css.icon}>
+              <TbCamper size={30} />
+            </span>
+            <span className={css.itemDescription}>Fully Integrated</span>
+          </label>
         </li>
-        <li className={css.item}>
-          <span className={css.icon}>
-            <TbCamper size={30} />
-          </span>
-          <span className={css.itemDescription}>Alcove</span>
+
+        <li className={clsx(css.item, { [css.selected]: vehicleType === 'alcove' })}>
+          <label className={css.itemLabel}>
+            <input
+              className={css.checkBox}
+              type="radio"
+              value={'alcove'}
+              checked={vehicleType === 'alcove'}
+              onClick={() => onChangeVehicleType('alcove')}
+              onChange={() => {}}
+            />
+            <span className={css.icon}>
+              <TbCamper size={30} />
+            </span>
+            <span className={css.itemDescription}>Alcove</span>
+          </label>
         </li>
       </ul>
 

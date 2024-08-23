@@ -12,7 +12,6 @@ export const selectIsLastItemLoaded = state => state.adverts.isLastItemLoaded;
 export const selectFilteredAdverts = createSelector(
   [selectAdverts, selectFilter],
   (adverts, filter) => {
-    console.log(adverts);
     const filteredAdverts = adverts.filter(advert => {
       const location = advert.location.toLowerCase().includes(filter.location.toLowerCase());
 
@@ -28,9 +27,12 @@ export const selectFilteredAdverts = createSelector(
 
       const shower = filter.shower ? filter.shower && advert.details.shower : true;
 
-      return location && airConditioner && gearboxAutomatic && kitchen && tv && shower;
+      const vehicleType = filter.vehicleType ? filter.vehicleType === advert.form : true;
+
+      return (
+        location && airConditioner && gearboxAutomatic && kitchen && tv && shower && vehicleType
+      );
     });
-    console.log('filteredAdverts', filteredAdverts);
     return filteredAdverts;
   }
 );
